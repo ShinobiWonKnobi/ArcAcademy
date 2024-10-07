@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-sage: #AEB4A9;
+  --color-pale-dogwood: #E0C1B3;
+  --color-pastel-pink: #D89A9E;
+  --color-blue-ryb: #5386E4;
+  --color-gunmetal: #223843;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-gunmetal);
+  color: var(--color-pale-dogwood);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--color-pastel-pink);
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.glassmorphism {
+  background: rgba(34, 56, 67, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(174, 180, 169, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(83, 134, 228, 0.2);
+}
+
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(83, 134, 228, 0.1);
+}
+
+.btn {
+  @apply px-6 py-3 rounded-full font-semibold transition duration-300 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-blue-ryb text-pale-dogwood hover:bg-opacity-80;
+}
+
+.btn-secondary {
+  @apply bg-pastel-pink text-gunmetal hover:bg-opacity-80;
+}
+
+.card {
+  @apply glassmorphism p-6 hover-effect;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.card-content {
+  @apply text-pale-dogwood font-medium;
+}
+
+.card-title {
+  @apply text-2xl font-bold text-pastel-pink mb-3;
+}
